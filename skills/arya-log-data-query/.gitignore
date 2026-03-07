@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 日志文件
+*.log
+
+# 输出文件
+*.json
+*.csv
+!package.json
