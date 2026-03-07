@@ -13,10 +13,16 @@ import argparse
 from datetime import datetime
 from pathlib import Path
 
-# 添加父目录到路径（支持从 SKILL 目录外调用）
-sys.path.insert(0, str(Path(__file__).parent.parent))
+# 使用绝对路径导入
+SPIDER_PATH = Path('/Users/sunyu.maner/.openclaw/workspace/spider')
+sys.path.insert(0, str(SPIDER_PATH))
 
-from spider.toutiao_spider import ToutiaoSpider
+# 直接加载模块
+import importlib.util
+spec = importlib.util.spec_from_file_location("toutiao_spider", SPIDER_PATH / "toutiao_spider.py")
+toutiao_module = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(toutiao_module)
+ToutiaoSpider = toutiao_module.ToutiaoSpider
 
 
 def parse_args():
