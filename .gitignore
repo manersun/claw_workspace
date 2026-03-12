@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# macOS
+.DS_Store
+
+# Editor
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# OpenClaw sensitive config (optional - uncomment if needed)
+# openclaw.json

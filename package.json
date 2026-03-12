@@ -1,0 +1,24 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "testsss",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manersun/claw_workspace.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/manersun/claw_workspace/issues"
+  },
+  "homepage": "https://github.com/manersun/claw_workspace#readme",
+  "dependencies": {
+    "markdown-pdf": "^11.0.0"
+  }
+}
