@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "skills": {
+    "n8n": {
+      "name": "n8n",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=n8n",
+      "source": "skillhub",
+      "version": "2.0.0"
+    },
+    "xhs": {
+      "name": "小红书 - RedNote",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=xhs",
+      "source": "skillhub",
+      "version": "1.2.5"
+    },
+    "summarize": {
+      "name": "Summarize",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=summarize",
+      "source": "skillhub",
+      "version": "1.0.0"
+    }
+  }
+}

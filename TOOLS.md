@@ -38,3 +38,39 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 ---
 
 Add whatever helps you do your job. This is your cheat sheet.
+
+---
+
+## n8n
+
+- **实例类型**: 待配置
+- **API URL**: `N8N_BASE_URL` (待填写)
+- **API Key**: `N8N_API_KEY` (存入 `~/.config/openclaw/settings.json`)
+
+### 配置步骤
+
+1. 创建配置文件:
+```bash
+mkdir -p ~/.config/openclaw
+code ~/.config/openclaw/settings.json
+```
+
+2. 添加配置:
+```json
+{
+  "skills": {
+    "n8n": {
+      "env": {
+        "N8N_API_KEY": "你的 API Key",
+        "N8N_BASE_URL": "https://你的 n8n 地址"
+      }
+    }
+  }
+}
+```
+
+3. 验证连接:
+```bash
+cd ~/.openclaw/workspace/skills/n8n
+python3 scripts/n8n_api.py list-workflows --pretty
+```

@@ -1,0 +1,10 @@
+{
+  "skills": {
+    "n8n": {
+      "env": {
+        "N8N_API_KEY": "待填写 - 从 n8n Settings → API 获取",
+        "N8N_BASE_URL": "待填写 - 例如 https://n8n.your-domain.com"
+      }
+    }
+  }
+}

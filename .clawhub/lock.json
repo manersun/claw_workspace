@@ -4,6 +4,18 @@
     "tavily-search": {
       "version": "1.0.0",
       "installedAt": 1772863986665
+    },
+    "n8n": {
+      "version": "2.0.0",
+      "installedAt": 1773315400125
+    },
+    "xhs": {
+      "version": "1.2.5",
+      "installedAt": 1773315708832
+    },
+    "summarize": {
+      "version": "1.0.0",
+      "installedAt": 1773316316781
     }
   }
 }
