@@ -126,8 +126,7 @@ def format_qq_message(analysis, data):
 
 请检查直播是否正常推流。"""
     
-    if not analysis['issues'] and not analysis['warnings']:
-        return None  # 正常不发送
+    # 无论是否有问题都发送
     
     # 获取最新数据点
     latest = data['data']['data'][0] if data.get('data') and data['data'].get('data') else {}
@@ -142,9 +141,11 @@ def format_qq_message(analysis, data):
         msg += "\n\n【严重问题】\n"
         for issue in analysis['issues']:
             msg += f"❌ {issue}\n"
+    else:
+        msg += "\n\n【状态】✅ 正常"
     
     if analysis['warnings']:
-        msg += "\n【警告】\n"
+        msg += "\n\n【警告】\n"
         for warn in analysis['warnings']:
             msg += f"⚠️ {warn}\n"
     
@@ -169,7 +170,9 @@ def send_qq_message(message):
     
     # 使用 OpenClaw message 工具的方式
     # 这里输出消息，由调用方处理
-    print(f"QQ_MESSAGE:{message}")
+    print(f"QQ_MESSAGE_START")
+    print(message)
+    print(f"QQ_MESSAGE_END")
     return {"status": "sent"}
 
 def main():
@@ -201,15 +204,15 @@ def main():
     
     print(f"QQ 发送结果：{result_msg}")
     
-    if analysis['status'] == 'ok' and not analysis['warnings']:
-        print("✅ 直播状态正常，无需告警")
-        return 0
-    elif analysis['issues']:
+    if analysis['issues']:
         print("🚨 发现严重问题，已发送告警")
         return 2
-    else:
+    elif analysis['warnings']:
         print("⚠️ 发现警告，已发送通知")
         return 1
+    else:
+        print("✅ 直播状态正常，已发送通知")
+        return 0
 
 if __name__ == '__main__':
     sys.exit(main())
